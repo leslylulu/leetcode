@@ -52,7 +52,7 @@ var twoSum = function (nums, target) {
 		const number = nums[i];
 		console.log('number ===', number)
 		if (target - number in pairIdx) { // key condition
-			return [pairIdx[target - number], i];
+			return [i, pairIdx[target - number]];
 		}
 		pairIdx[number] = i;
 	}
