@@ -89,9 +89,29 @@ var isAnagram = function (s, t) {
 	return true;
 };
 
-const result = isAnagram('anagram', 'nagaram');
+var isAnagram2 = function (s, t) {
+	if (s.length !== t.length) return false;
+
+	const count = new Map();
+
+	for (let char of s) {
+		count.set(char, (count.get(char) || 0) + 1);
+	}
+
+	for (let char of t) {
+		if (!count.has(char)) return false;
+		count.set(char, count.get(char) - 1);
+		if (count.get(char) < 0) return false;
+	}
+	return true;
+};
+
+// const result = isAnagram2('anagram', 'nagaram');
 // const result = isAnagram('cat', 'car');
 // const result = isAnagram('ab', 'a');
 // const result =  isAnagram('yiieodoo', 'ooodyiiz')
+const result = isAnagram2('anagram👩🏻‍💻', 'naga👩🏻‍💻ram');
+
+
 
 console.log('result === ', result)
