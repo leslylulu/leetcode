@@ -42,7 +42,7 @@ var maxProfit0 = function (prices) {
 	return maxProfit;
 };
 
-// COMMENT solution one ✅✅✅
+// COMMENT solution 2 ✅
 
 var maxProfit = function (prices) {
 	let minmun = Infinity;
@@ -57,6 +57,7 @@ var maxProfit = function (prices) {
 	return maxProfit;
 };
 
+
 // let profit = maxProfit([7, 1, 5, 3, 6, 4])
 // console.log('profit === ', profit);
 
@@ -67,18 +68,31 @@ var maxProfit = function (prices) {
 // console.log('profit === ', profit);
 
 
-let profit = maxProfit([8, 10, 2, 6, 104, 1, 7, 120, 16, 6])
-console.log('profit === ', profit);
+// let profit = maxProfit([8, 10, 2, 6, 104, 1, 7, 120, 16, 6])
+// console.log('profit === ', profit);
 
 
-/**
- * 1. 这类思路叫什么？
-这其实是 “一次遍历动态维护最优解” 的经典算法思想，或者称为：
 
-“贪心算法（Greedy Algorithm）”
 
-“单遍扫描（One-pass scan）”
+// COMMENT solution 3 ✅✅✅
 
-有时也称为 “动态规划（Dynamic Programming）” 的一种简化版本（只维护几个状态变量，不存所有状态）
- */
+function maxProfit2(prices) {
+	let toBuy = 0;
+	let maxP = 0;
+
+	for (let i = 1; i < prices.length; i++) {
+		console.log('tobuy =', toBuy, ', num = ', prices[i]);
+		if (prices[toBuy] < prices[i]) {
+			if (prices[i] - prices[toBuy] > maxP) {
+				// only minimum price is updated, the maximum profit is updated
+				maxP = prices[i] - prices[toBuy];
+			}
+		} else toBuy = i;
+	}
+
+	return maxP;
+}
+
+let profit2 = maxProfit2([8, 10, 2, 6, 104, 1, 7, 10, 16, 6])
+console.log('profit2 === ', profit2);
 
