@@ -58,7 +58,8 @@ var lengthOfLongestSubstring = function (s) {
 // const result = lengthOfLongestSubstring('dvdf');
 // const result = lengthOfLongestSubstring('abcabcbb');
 // const result = lengthOfLongestSubstring('bbbbb');
-const result = lengthOfLongestSubstring(' ');
+const result = lengthOfLongestSubstring('abceeeeeabceeeabcdefeeeeeabc');
+// const result = lengthOfLongestSubstring(' ');
 
 console.log('result === ', result)
 
