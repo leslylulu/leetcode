@@ -36,29 +36,30 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 var lengthOfLongestSubstring = function (s) {
 	if(s.length == 0) return 0
 
-	let slow = 0;
+	// let slow = 0;
 	let fast = 0;
 	let tempString = "";
 	let maxLength = 0;
 	while(fast < s.length){
 		if(tempString.includes(s[fast])){
 			tempString = tempString.slice(1)
-			slow++
+			// slow++
 		}else{
 			tempString += s[fast];
 			maxLength = Math.max(maxLength, tempString.length);
 			fast++
 		}
+		// console.log('tempString: ', s[fast], tempString);
 	}
 	return maxLength;
 };
 
-// const result = lengthOfLongestSubstring('pwwkew');
+const result = lengthOfLongestSubstring('pwwkew');
 // const result = lengthOfLongestSubstring('au');
 // const result = lengthOfLongestSubstring('dvdf');
 // const result = lengthOfLongestSubstring('abcabcbb');
 // const result = lengthOfLongestSubstring('bbbbb');
-const result = lengthOfLongestSubstring('abceeeeeabceeeabcdefeeeeeabc');
+// const result = lengthOfLongestSubstring('abceeeeeabceeeabcdefeeeeeabc');
 // const result = lengthOfLongestSubstring(' ');
 
 console.log('result === ', result)

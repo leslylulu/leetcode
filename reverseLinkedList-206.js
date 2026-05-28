@@ -57,6 +57,9 @@ var reverseList = function (head) {
 		curr.next = prev;
 		prev = curr;
 		curr = nextTempNode
+		// console.log(`nextTempNode:${nextTempNode?.val}, curr:${curr?.val}, prev:${prev?.val}`);
+		// console.log(`curr =======`)
+		printList(curr)
 	}
 	return prev
 
