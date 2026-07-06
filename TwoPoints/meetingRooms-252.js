@@ -1,14 +1,14 @@
 /**
  * Meeting Rooms I
 
-Given an array of meeting time intervals where each interval is represented as [start, end], determine if a person could attend all meetings without any overlaps.
+Given an array of meeting time intervals where each interval is represented as [start, end], 
+determine if a person could attend all meetings without any overlaps.
 
 Example:
 
 Input: intervals = [[0, 30], [5, 10], [15, 20]]
 Output: false
 Explanation: The meeting [0, 30] overlaps with [5, 10].
-
 
  */
 
@@ -23,6 +23,8 @@ function canAttendMeetings(intervals) {
 }
 
 // let isOverLap = canAttendMeetings([[15, 20], [0, 30], [5, 10]])
-let isOverLap = canAttendMeetings([[1, 5], [6, 10], [12, 15], [16, 20]])
+let example1 = [[0, 30], [5, 10], [15, 20]];
+let example2 = [[1, 5], [6, 10], [12, 15], [16, 20]];
+let isOverLap = canAttendMeetings(example2)
 
 console.log(isOverLap);

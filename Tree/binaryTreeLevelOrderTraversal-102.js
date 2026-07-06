@@ -1,15 +1,10 @@
 /**
  * 102. Binary Tree Level Order Traversal
-Medium
-Topics
-premium lock icon
-Companies
-Hint
-Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+Given the root of a binary tree, return the level order traversal of its nodes' values. 
+(i.e., from left to right, level by level).
  
 
 Example 1:
-
 
 Input: root = [3,9,20,null,null,15,7]
 Output: [[3],[9,20],[15,7]]
@@ -21,8 +16,6 @@ Example 3:
 
 Input: root = []
 Output: []
- 
-
 
  */
 
@@ -47,8 +40,6 @@ var levelOrder = function (root) {
 		let level = [];
 		for(let i = 0; i < levelSize; i++){
 			let node = queue.shift(); 
-			console.log(node)
-			console.log(typeof node)
 			level.push(node.val);
 
 			if(node.left) queue.push(node.left)
@@ -57,6 +48,7 @@ var levelOrder = function (root) {
 		// console.log(`queue length = ${queue.length}`);
 		result.push(level);
 	}
+	console.log(result)
 	return result;
 };
 
@@ -65,5 +57,5 @@ var levelOrder = function (root) {
 // 2 - 15, 7
 // [3, 9, 20, null, null, 15, 7]
 const tree = new TreeNode(3, new TreeNode(9, null, null), new TreeNode(20, new TreeNode(15, null, null), new TreeNode(7, null, null)));
-// console.log(tree)
+console.log(tree)
 const result = levelOrder(tree);

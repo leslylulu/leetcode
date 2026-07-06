@@ -12,8 +12,6 @@
 // last step = 2, fn(2) = 2
 // 3+2 = 5
 
-// try 1
-// Time Limit Exceeded --- 21 / 45 testcases passed
 
 
 // ** 问题在哪里？**

@@ -1,4 +1,15 @@
 /**
+ * 322. Coin Change
+Medium
+
+You are given an integer array coins representing coins of different denominations 
+and an integer amount representing a total amount of money.
+
+Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+You may assume that you have an infinite number of each kind of coin.
+ */
+/**
  * @param {number[]} coins
  * @param {number} amount
  * @return {number}
@@ -13,7 +24,6 @@ var coinChange = function (coins, amount) {
 	// Base case: making $0 requires 0 coins.
 	// Every other sub-amount depends on this starting point.
 	coinCountTable[0] = 0;
-
 	// Outer loop: go through each amount from $1 up to the target.
 	// We build the answer bottom-up so smaller results are ready
 	// before we need them.
@@ -22,11 +32,9 @@ var coinChange = function (coins, amount) {
 		// Inner loop: try every coin denomination as the one we just used
 		// to reach amount i. We pick whichever gives the smallest total.
 		for (const coin of coins) {
-
 			// Skip this coin if it's worth more than the current amount —
 			// that would leave a negative remainder, which doesn't exist.
 			if (i - coin >= 0) {
-
 				// If we used this coin, the remainder is (i - coin).
 				// That remainder's best answer is already stored in the table.
 				// Add 1 for the coin we just used, then keep the smaller result.

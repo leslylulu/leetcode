@@ -1,4 +1,10 @@
 /**
+ * Given an integer n, 
+ * return an array ans of length n + 1 such that 
+ * for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.
+ */
+
+/**
  * @param {number} n
  * @return {number[]}
  */
@@ -20,8 +26,6 @@ var countBits = function (n) {
 
 	results[0] = 0;
 
-
-
 	const sum = (str) => {
 		let total = 0;
 		str.split('').forEach(item => {
@@ -30,13 +34,10 @@ var countBits = function (n) {
 		return total;
 	}
 
-
 	for(let i = 1; i <= n; i++){
 		let str = numberToBin(i);
 		results[i] = sum(str);
 	}
-
-	
 
 	// console.log(results);
 	return results;
@@ -63,5 +64,5 @@ var countBits2 = function (n) {
 
 }
 
-// countBits(5);
-countBits2(33);
+countBits2(5);
+// countBits2(33);
